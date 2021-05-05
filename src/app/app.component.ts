@@ -13,8 +13,13 @@ export class AppComponent {
   public  data=[];
 
   submit(){
-    let entry={Name:this.empName, Id:this.empId};
-     this.empName="" ;
+
+    let entry={
+      Name:this.empName, 
+      Id:this.empId
+    };
+
+     this.empName="";
      this.empId=null;
      this.data.push(entry);
   }
