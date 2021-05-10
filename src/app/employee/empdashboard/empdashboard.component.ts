@@ -7,24 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpdashboardComponent implements OnInit {
 
-  
-  public empDetail=JSON.parse(localStorage.getItem("alluser"));
-  public Name=this.empDetail.empName;
-  public ID= this.empDetail.empID;
-  public Department = this.empDetail.dept;
+  public empDetail=JSON.parse(localStorage.getItem("Details"));
+  public curDetail=JSON.parse(localStorage.getItem("curUser"));
+  public index=JSON.parse(localStorage.getItem('index'));
+
+  public Name = this.curDetail.empName;  
+  public ID = this.curDetail.empID;
+  public Department = this.curDetail.dept;
+  public Email = this.curDetail.mail;
+  public Password = this.curDetail.psw; 
+ 
   public editDetail = {};
+  public isClicked=false;
+  
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // update(index){
-  //   this.editDetail={empName:this.Name,empID:this.ID,dept:this.Department,mail:this.manualEmail,psw:this.manualPass,index:this.index};
-  //   this.Details[this.index]=this.data;
-  //   localStorage.setItem("Detail",JSON.stringify(this.Details));
-  
+  edit(){
+    this.isClicked=true;
+    this.Name=this.curDetail.empName;
+    this.ID=this.curDetail.empID;
+    this.Email=this.curDetail.mail;       
+    this.Department=this.curDetail.dept;        
+    this.Password=this.curDetail.psw;
+  }
+
+
+  update(){
+    this.editDetail={empName:this.Name,empID:this.ID,dept:this.Department,mail:this.Email,psw:this.Password,index:this.index};
+    this.empDetail[this.index]=this.editDetail;    
+    localStorage.setItem("Details",JSON.stringify(this.empDetail));
     }
 
-
-
+}

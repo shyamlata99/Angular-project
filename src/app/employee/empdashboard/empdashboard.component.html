@@ -1,23 +1,39 @@
 <body>
     <div class="container mt-5">
       <h2>Welcome to Employee Dashboard!</h2>
-          <ul>
-            <li>
-              <h5>Employee Name</h5>
-              <h4>{{Name}}</h4>
-            </li>
-            <li>
-              <h5>Employee ID</h5>
-              <h4>{{ID}}</h4>
-            </li>
-            <li>
-              <h5>Employee Department</h5>
-              <h4>{{Department}}</h4>
-            </li>
-          </ul>
-        
-      <td><button class="btn btn-primary btn-lg">Edit</button></td>
-  
+          <div>
+            <ul>
+              <li>
+                <h5>Employee Name</h5>
+                <h4>{{Name}}</h4>
+              </li>
+              <li>
+                <h5>Employee ID</h5>
+                <h4>{{ID}}</h4>
+              </li>
+              <li>
+                <h5>Employee Department</h5>
+                <h4>{{Email}}</h4>
+              </li>
+              <li>
+                <h5>Employee Password</h5>
+                <h4>{{Password}}</h4>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div id="box"  [ngStyle]="{'display': (isClicked==false) ? 'none' : 'block'}">
+            <input type="text" placeholder="EmpName.." [(ngModel)]="Name" required><br><br>
+            <input type="text" placeholder="EmpId.."  [(ngModel)]="ID" required><br><br>
+            <input type="text" placeholder="EmpDept.."  [(ngModel)]="Department" required><br><br>
+            <input type="text" placeholder="ManualEmail.." [(ngModel)]="Email" required><br><br>
+            <input type="text" placeholder="ManualPass.."  [(ngModel)]="Password" required> 
+            </div>
+              <button (click)="edit()" class="btn btn-danger">Edit Details</button>
+              <button (click)="update()" class="btn-btn-danger">Confirm</button> 
+          </div>
+
     </div>
   </body>
 

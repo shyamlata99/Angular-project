@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  public Details = JSON.parse(localStorage.getItem('alluser'));   //replaced alluser with currentUser
+  public Details = JSON.parse(localStorage.getItem('Details'));   //replaced alluser with currentUser
   // public name =[];
   public empName:string;
   public empId: number;
@@ -30,14 +30,14 @@ export class AdminDashboardComponent implements OnInit {
   add(){
     this.data={empName:this.empName, empID:this.empId, dept:this.empDept, mail:this.manualEmail, psw:this.manualPass , index:this.index} 
     this.Details.push(this.data); 
-    localStorage.removeItem('alluser');
-    localStorage.setItem("Detail",JSON.stringify(this.Details));
+    localStorage.removeItem('Details');
+    localStorage.setItem("Details",JSON.stringify(this.Details));
     this.index++;
   }
 delete(index){
   this.Details.splice(index,1);
-  localStorage.removeItem('alluser');
-  localStorage.setItem('Detail',JSON.stringify(this.Details));
+  localStorage.removeItem('Details');
+  localStorage.setItem('Details',JSON.stringify(this.Details));
 }
 edit(index){
   this.empName=this.Details[index].empName;
@@ -47,12 +47,12 @@ edit(index){
   this.manualPass=this.Details[index].psw;
   this.isclicked=true;
   this.index=index;
-  
 }
+
 update(index){
   this.data={empName:this.empName,empID:this.empId,dept:this.empDept,mail:this.manualEmail,psw:this.manualPass,index:this.index}
   this.Details[this.index]=this.data;
-  localStorage.setItem("Detail",JSON.stringify(this.Details));
+  localStorage.setItem("Details",JSON.stringify(this.Details));
 
   }
 

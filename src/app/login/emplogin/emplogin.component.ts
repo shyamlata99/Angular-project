@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
     private router:Router
   ) { }
 
-  
     public userId : any ;
     public userEmail : any;
     public userPass : any;
@@ -50,7 +49,7 @@ export class LoginComponent implements OnInit {
   empLogin(){
     if(this.authService.empLogin(this.userId, this.userEmail, this.userPass))
     {
-      this.router.navigateByUrl('employeedashboard');
+        this.router.navigateByUrl('employeedashboard');
     }
 
   }

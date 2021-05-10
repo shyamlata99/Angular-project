@@ -10,7 +10,8 @@ export class AuthService {
     private router: Router
   ) { }
 
-  //employee 
+  public Details = JSON.parse(localStorage.getItem('Details')); 
+
   public empDetails = [
     {
       empID : '10001',
@@ -49,22 +50,19 @@ export class AuthService {
     } 
    ];
 
+  //employee
    empLogin(userId, userEmail, userPass)
    {
      for(let i=0; i<this.empDetails.length; i++)
      {
-       if(userId==this.empDetails[i].empID && userEmail==this.empDetails[i].mail && userPass==this.empDetails[i].psw)
+       if(userId==this.Details[i].empID && userEmail==this.Details[i].mail && userPass==this.Details[i].psw)
        {
-         localStorage.setItem("alluser",JSON.stringify(this.empDetails[i]));
+        localStorage.setItem('curUser',JSON.stringify(this.Details[i])) ;
+        localStorage.setItem('index',JSON.stringify(i));
+        return true;
        }
      }
-     this.router.navigateByUrl('employeedashboard');
-     return false;
    }
-
-
-
-
 
    //admin
   login(email,password)

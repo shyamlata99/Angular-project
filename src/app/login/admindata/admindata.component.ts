@@ -26,7 +26,7 @@ export class AdmindataComponent implements OnInit {
      console.log('check');
      if(this.authService.login(this.adminEmail, this.adminPass))
      {
-       localStorage.setItem('alluser',JSON.stringify(this.empDetails))   
+       localStorage.setItem('Details',JSON.stringify(this.empDetails))   
        this.router.navigateByUrl('admindashboard')
      }
     }
