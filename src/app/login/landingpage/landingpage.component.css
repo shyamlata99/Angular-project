@@ -1,0 +1,21 @@
+body {
+    background-color:#18aaa0; 
+}
+
+.container {
+    border-style: solid;
+    border-radius: 10px;
+    background-color:#111e52 ;
+    color:white;
+    padding: 10rem;
+    font-weight: bold;   
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(238, 232, 231, 0.979);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+

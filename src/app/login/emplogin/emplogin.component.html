@@ -1,0 +1,19 @@
+<body>
+    <div class="full-screen-container">  
+      <div class="login-container">
+        <h1 class="login-title"> LOGIN </h1>
+        <div class="input-group">
+        <label for="empname">Employee ID</label>
+        <input type="text" [(ngModel)]="userId" required>
+
+        <label for="empname">Email</label>
+        <input type="text" [(ngModel)]="userEmail" required>
+
+        <label for="password" >Password</label>
+        <input type="password"  [(ngModel)]="userPass" required>
+
+        <button type="submit" (click)="empLogin()" class="btn btn-danger mt-5">Enter Details</button> 
+      </div>
+      </div>
+    </div>
+</body>

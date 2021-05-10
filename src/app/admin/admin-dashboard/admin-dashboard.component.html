@@ -1,0 +1,51 @@
+<body>
+    <div class="container mt-5">
+      <h2>Welcome to Admin Dashboard!</h2>
+      <div id="box">
+        <input type="text" placeholder="EmpName.." [(ngModel)]="empName" required><br><br>
+        <input type="text" placeholder="EmpId.."  [(ngModel)]="empId" required><br><br>
+        <input type="text" placeholder="EmpDept.."  [(ngModel)]="empDept" required><br><br>
+        <input type="text" placeholder="ManualEmail.." [(ngModel)]="manualEmail" required><br><br>
+        <input type="text" placeholder="ManualPass.."  [(ngModel)]="manualPass" required><br><br>
+  
+        <button *ngIf = "!isclicked" (click)="add()" class="btn btn-danger">Add Details</button>
+        <button *ngIf = "isclicked"  (click)="update(index)" class="btn-btn-danger">Update Details</button>
+      </div>
+      
+      <table class="table mt-3" >
+        <thead class="thead-light">
+          <tr>
+            <th>S.no</th>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Employee Department</th>
+            <th>Manual Email</th>
+            <th>Manual Password</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        
+        <tr *ngFor="let item of Details;let i=index" >
+          <td (click)="userDetail(i)"> {{i+1}} </td>     
+          <td (click)="userDetail(i)">{{item.empName}}</td>  
+          <td (click)="userDetail(i)">{{item.empID}}</td>
+          <td (click)="userDetail(i)">{{item.dept}}</td>
+          <td (click)="userDetail(i)">{{item.mail}}</td>
+          <td (click)="userDetail(i)">{{item.psw}}</td>
+          <td><button (click)="edit(i)" class="btn btn-primary btn-lg"> Edit </button>
+          <button (click)="delete(i)" class="btn btn-primary btn-lg">Remove</button></td>
+        </tr>
+  
+          <!-- <tr *ngFor="let val of data;let i=index" [ngStyle]="{'background-color': (val.Id%2==0) ? 'green' : 'red'}">
+          <td>{{i+1}}</td>     
+          <td>{{val.Name}}</td>
+          <td>{{val.Id}}</td>
+          <td>{{val.Dept}}</td>    
+          <td>{{val.Email}}</td>
+          <td>{{val.Pass}}</td>
+          <td><button (click)="delete(i)" class="btn btn-primary btn-lg">Remove</button></td>
+          <td><button (click)="edit(i)" class="btn btn-primary btn-lg"> Edit </button></td> -->
+        <!-- </tr> -->
+      </table>
+    </div>
+  </body>

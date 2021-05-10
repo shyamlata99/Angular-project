@@ -1,4 +1,4 @@
-/* body{
+body{
     background-color:#18aaa0; 
 }
 
@@ -22,4 +22,26 @@ cursor: pointer;
   box-shadow: 0 0.2rem 0.4rem 0 rgba(238, 232, 231, 0.979);
   transition: transform 150ms;
   transform: scale(1.03);
-} */
+}
+
+th{
+    color:white;
+}
+
+h2{
+    text-align: center;
+    font-weight: bold;
+    color:greenyellow;
+}
+
+button{
+    width:50%;
+    margin-left:22rem;
+    margin-top: 10rem;
+    
+    }
+
+
+h5{
+    color:indianred;
+}
