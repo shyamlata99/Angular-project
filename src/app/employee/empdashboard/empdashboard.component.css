@@ -12,9 +12,28 @@ body{
    
 }
 
-.card{
-    display: flex;
-    flex-direction: row;
+.data {
+    background-color: hsla(201, 100%, 6%, 0.5);
+    padding:20px 40px;
+    width: 90%;
+    margin:20px;
+    margin-left:50px;
+    border-radius:10px;
+    /* display: flex; */
+    align-items: center;
+}
+
+input{
+    font-size: 1.5em;
+    padding: .5em .25em;
+    background-color: hsla(201, 100%, 91%, 0.3);
+    border: 1px solid hsl(201, 100%, 6%);
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    width:80%;
+    font-weight: lighter;
+    margin-left:50px;
 }
 
 .table {
@@ -22,15 +41,38 @@ body{
     border-style: solid;
 }
 
-button:hover{
-cursor: pointer;
-  box-shadow: 0 0.2rem 0.4rem 0 rgba(238, 232, 231, 0.979);
-  transition: transform 150ms;
-  transform: scale(1.03);
+button {
+    padding: 10px 30px;
+    border-radius: 5px; 
+    background-color: hsla(201, 100%, 50%, 0.1);
+    border: 1px solid hsl(201, 100%, 50%);
+    outline: none;
+    font-size: 1.5em;
+    color: white;
+    font-weight: lighter;
+    /* margin-top: 20px; */
+    margin:20px;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+button:hover {
+    background-color: hsla(201, 100%, 50%, 0.3)
+}
+
+button:focus {
+    background-color: hsla(201, 100%, 50%, 0.5)
 }
 
 th{
     color:white;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 h2{
@@ -38,14 +80,6 @@ h2{
     font-weight: bold;
     color:greenyellow;
 }
-
-button{
-    width:50%;
-    margin-left:22rem;
-    margin-top: 10rem;
-    
-    }
-
 
 h5{
     color:indianred;
