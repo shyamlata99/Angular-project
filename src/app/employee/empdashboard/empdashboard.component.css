@@ -12,6 +12,13 @@ body{
    
 }
 
+.draggable {
+    margin:30px;
+    color: white;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
 .data {
     background-color: hsla(201, 100%, 6%, 0.5);
     padding:20px 40px;

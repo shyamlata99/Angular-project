@@ -40,6 +40,7 @@ export class EmpdashboardComponent implements OnInit {
     this.editDetail={empName:this.Name,empID:this.ID,dept:this.Department,mail:this.Email,psw:this.Password,index:this.index};
     this.empDetail[this.index]=this.editDetail;    
     localStorage.setItem("Details",JSON.stringify(this.empDetail));
+    this.isClicked=false;
     }
 
 }

@@ -10,8 +10,9 @@ export class AdminauthGuard implements CanActivate {
 
   canActivate()
   {
-    if(localStorage.getItem('allusers'))
+    if(localStorage.getItem('adminEmail'))  
     {
+      localStorage.removeItem('adminEmail');
       return true;
     }
    else

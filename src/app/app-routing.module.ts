@@ -17,7 +17,7 @@ const routes: Routes = [
 //   path:'employee' , loadChildren:'./employee#EmployeeModule'   //EmployeeDashboard
 // },
 {
-  path:'employeedashboard' , component: EmpdashboardComponent,   //EmployeeDashboard
+  path:'employeedashboard' , component: EmpdashboardComponent, canActivate:[AdminauthGuard]  //EmployeeDashboard
 },
 {
   path:'emppage' , component: LoginComponent    //EmployeeLoginPage

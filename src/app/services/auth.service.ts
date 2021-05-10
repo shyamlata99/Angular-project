@@ -59,7 +59,8 @@ export class AuthService {
        {
         localStorage.setItem('curUser',JSON.stringify(this.Details[i])) ;
         localStorage.setItem('index',JSON.stringify(i));
-        return true;
+        localStorage.setItem('adminEmail', ' authenticate ')
+        return true; 
        }
      }
    }
